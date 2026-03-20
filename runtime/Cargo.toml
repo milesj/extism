@@ -9,7 +9,7 @@ repository.workspace = true
 version.workspace = true
 
 [dependencies]
-wasmtime = { version = "40", default-features = false, features = [
+wasmtime = { version = "41", default-features = false, features = [
   'cache',
   'gc',
   'gc-drc',
@@ -20,8 +20,8 @@ wasmtime = { version = "40", default-features = false, features = [
   'pooling-allocator',
   'demangle',
 ] }
-wasi-common = "40"
-wiggle = "40"
+wasi-common = "41"
+wiggle = "41"
 anyhow = "1"
 async-trait = "0.1"
 serde = { version = "1", features = ["derive"] }
