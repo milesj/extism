@@ -9,7 +9,7 @@ repository.workspace = true
 version.workspace = true
 
 [dependencies]
-wasmtime = { version = "38", default-features = false, features = [
+wasmtime = { version = "39", default-features = false, features = [
   'cache',
   'gc',
   'gc-drc',
@@ -20,15 +20,16 @@ wasmtime = { version = "38", default-features = false, features = [
   'pooling-allocator',
   'demangle',
 ] }
-wasi-common = "38"
-wiggle = "38"
+wasi-common = "39"
+wiggle = "39"
 anyhow = "1"
+async-trait = "0.1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 toml = "0.9"
 sha2 = "0.10"
 tracing = "0.1"
-tracing-subscriber = { version = "0.3.18", features = [
+tracing-subscriber = { version = "0.3.23", features = [
   "std",
   "env-filter",
   "fmt",

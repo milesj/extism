@@ -1,5 +1,6 @@
 use crate::*;
 
+use async_trait::async_trait;
 use wasi_common::{Error, ErrorExt};
 
 pub struct ReadOnlyDir<D: wasi_common::WasiDir> {
@@ -14,7 +15,7 @@ impl<D: wasi_common::WasiDir> ReadOnlyDir<D> {
     }
 }
 
-#[wiggle::async_trait]
+#[async_trait]
 impl<D: wasi_common::WasiDir> wasi_common::WasiDir for ReadOnlyDir<D> {
     fn as_any(&self) -> &dyn std::any::Any {
         self.inner.as_any()
