@@ -53,5 +53,5 @@ fn main() {
         .collect::<Vec<Cow<'_, str>>>()
         .join("\n\n");
 
-    std::fs::write("../target/header.h", data).unwrap();
+    // std::fs::write("../target/header.h", data).unwrap();
 }
