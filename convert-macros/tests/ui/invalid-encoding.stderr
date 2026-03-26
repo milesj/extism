@@ -1,6 +1,7 @@
 error: encoding needs to be specified
 
          = try: `#[encoding(Json)]`
+
  --> tests/ui/invalid-encoding.rs:3:10
   |
 3 | #[derive(ToBytes)]
@@ -12,6 +13,7 @@ error: expected attribute arguments in parentheses: #[encoding(...)]
 
          = note: expects a path
          = try: `#[encoding(Json)]`
+
  --> tests/ui/invalid-encoding.rs:7:3
   |
 7 | #[encoding]
@@ -21,6 +23,7 @@ error: expected parentheses: #[encoding(...)]
 
          = note: expects a path
          = try: `#[encoding(Json)]`
+
   --> tests/ui/invalid-encoding.rs:11:12
    |
 11 | #[encoding = "string"]
@@ -30,6 +33,7 @@ error: unexpected token
 
          = note: expects a path
          = try: `#[encoding(Json)]`
+
   --> tests/ui/invalid-encoding.rs:15:21
    |
 15 | #[encoding(something, else)]
@@ -38,6 +42,7 @@ error: unexpected token
 error: only one encoding can be specified
 
          = try: remove `#[encoding(Encodings)]`
+
   --> tests/ui/invalid-encoding.rs:20:1
    |
 20 | #[encoding(Encodings)]
