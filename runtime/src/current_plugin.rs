@@ -5,7 +5,8 @@ use crate::*;
 /// Plugin variables, shared across every instance created from the same
 /// [`CompiledPlugin`]. Wrapped in an `Arc<Mutex<..>>` so that updates made by
 /// one instance are visible to all others and survive a store reset.
-pub(crate) type Vars = std::sync::Arc<std::sync::Mutex<std::collections::BTreeMap<String, Vec<u8>>>>;
+pub(crate) type Vars =
+    std::sync::Arc<std::sync::Mutex<std::collections::BTreeMap<String, Vec<u8>>>>;
 
 /// CurrentPlugin stores data that is available to the caller in PDK functions, this should
 /// only be accessed from inside a host function
@@ -334,7 +335,9 @@ impl CurrentPlugin {
 
     /// Mutable access to a plugin's variables. The variables are shared across
     /// every instance created from the same [`CompiledPlugin`].
-    pub fn vars_mut(&mut self) -> std::sync::MutexGuard<'_, std::collections::BTreeMap<String, Vec<u8>>> {
+    pub fn vars_mut(
+        &mut self,
+    ) -> std::sync::MutexGuard<'_, std::collections::BTreeMap<String, Vec<u8>>> {
         self.vars.lock().unwrap()
     }
 

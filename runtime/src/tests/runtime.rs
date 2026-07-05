@@ -733,10 +733,7 @@ fn test_vars_shared_across_instances() {
 
     // ...is visible from every other instance.
     assert_eq!(
-        p2.current_plugin()
-            .vars()
-            .get("key")
-            .map(|v| v.as_slice()),
+        p2.current_plugin().vars().get("key").map(|v| v.as_slice()),
         Some(b"value".as_slice())
     );
 
